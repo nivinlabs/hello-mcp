@@ -11,10 +11,6 @@ def add(a: int, b: int) -> int:
 def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 
-@mcp.route("/health")
-def health_check():
-    return "Server is up!"
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     # Run FastMCP server binding to 0.0.0.0 and correct port
