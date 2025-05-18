@@ -10,6 +10,10 @@ def add(a: int, b: int) -> int:
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
+    
+@mcp.route("/")
+def health_check():
+    return "Server is up!"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
