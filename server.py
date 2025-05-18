@@ -1,6 +1,5 @@
 import os
 from mcp.server.fastmcp import FastMCP
-import uvicorn
 
 mcp = FastMCP("Demo")
 
@@ -14,5 +13,5 @@ def get_greeting(name: str) -> str:
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
-    # Assuming FastMCP exposes an ASGI app attribute
-    uvicorn.run(mcp.app, host="0.0.0.0", port=port)
+    # Run FastMCP server binding to 0.0.0.0 and correct port
+    mcp.run(host="0.0.0.0", port=port)
